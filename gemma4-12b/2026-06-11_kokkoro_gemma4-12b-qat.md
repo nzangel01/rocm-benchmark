@@ -2,7 +2,8 @@
 
 **Model:** gemma4:12b-it-qat (QAT Q4_0, 6.48 GiB)
 **Node:** kokkoro (192.168.1.5)
-**GPU:** 2x RTX 3060 12GB (24GB total VRAM)
+**GPU:** 2x RTX 3060 12GB (24GB total VRAM) — PCIe 4.0 x16
+**Board:** SuperMicro S8030 (server board, bundled with GPUs)
 **Ollama:** 0.30.7
 **Backend:** CUDA
 
@@ -30,4 +31,6 @@
 
 - RTX 3060 x2 vs RTX 3090: ช้ากว่า 60% แม้ VRAM รวมเท่ากัน (24GB)
 - Multi-GPU split inference overhead ลด throughput เทียบ single GPU
+- S8030 board มาพร้อม GPU → ต้นทุนจริงต่อ tok/s ถูกมาก (board ราคาหลักพัน)
+- PCIe 4.0 x16 ทั้งสอง slot — bandwidth ไม่เป็น bottleneck
 - Kokkoro จะดีขึ้นหลัง swap เพิ่ม 3060 x3 (36GB) จาก Ayanami
